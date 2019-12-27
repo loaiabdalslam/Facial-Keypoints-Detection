@@ -18,19 +18,5 @@ class Net(nn.Module):
 
 
     def forward(self, x):
-        ## TODO: Define the feedforward behavior of this model
-        ## x is the input image and, as an example, here you may choose to include a pool/conv step:
-        x = self.pool(F.relu(self.conv1(x)))
-        x = self.pool(F.relu(self.conv2(x)))
-        x = self.pool(F.relu(self.conv3(x)))
-        x = self.pool(F.relu(self.conv4(x)))
 
-        x = x.view(x.size(0), -1)
-
-        x = F.relu(self.fc1(x))
-        x = self.fc1_drop(x)
-        x = self.fc2(x)
-
-
-        # a modified x, having gone through all the layers of your model, should be returned
         return x
