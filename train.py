@@ -72,13 +72,13 @@ def train_net(n_epochs):
             # zero the parameter (wight) gradients
             optimizer.zero_grad()
             # backword pass to calculate the weight gradients
-            loss.backword()
+            loss.backward()
             # update the weights
             optimizer.step()
 
             # print the loss statistics
-            running_loss += loss.data[0]
-            if batch_i % 40 == 39: # print every 40 batches
+            running_loss += loss.item()
+            if batch_i % 40 == 9: # print every 10 batches
                 print('Epoch: {}, Batch: {}, Avg. Loss: {}'.format(epoch + 1, batch_i + 1, running_loss / 40))
                 running_loss = 0.0
 
