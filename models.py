@@ -13,10 +13,7 @@ class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
 
-        # 1 input image channel (grayscale), 32 output channels/feature maps, 5x5 square convolution kernel
 
-        ## Note that among the layers to add, consider including:
-        # maxpooling layers, multiple conv layers, fully-connected layers, and other layers (such as dropout or batch normalization) to avoid overfitting
 
 
 
