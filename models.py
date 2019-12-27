@@ -14,17 +14,7 @@ class Net(nn.Module):
         super(Net, self).__init__()
 
         # 1 input image channel (grayscale), 32 output channels/feature maps, 5x5 square convolution kernel
-        self.conv1 = nn.Conv2d(1, 32, 3)
-        self.pool = nn.MaxPool2d(2, 2)
 
-        self.conv2 = nn.Conv2d(32, 64, 3)
-        self.conv3 = nn.Conv2d(64, 64, 3)
-        self.conv4 = nn.Conv2d(64, 128, 3)
-
-        self.fc1 = nn.Linear(128*12*12, 1024)
-        self.fc1_drop = nn.Dropout(p = 0.2)
-
-        self.fc2 = nn.Linear(1024, 136)
         ## Note that among the layers to add, consider including:
         # maxpooling layers, multiple conv layers, fully-connected layers, and other layers (such as dropout or batch normalization) to avoid overfitting
 
