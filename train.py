@@ -1,21 +1,19 @@
 import matplotlib.pylab as plt
 import numpy as np
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from torch.utils.data import Dataset, DataLoader
+from torchvision import transforms, utils
+from data_load import FacialKeypointsDataset
+from data_load import Rescale, RandomCrop, Normalize, ToTensor
+import torch.optim as optim
+
 from models import *
 
 # instantiate the model
 net = AlexNet()
 print(net)
-
-
-from torch.utils.data import Dataset, DataLoader
-from torchvision import transforms, utils
-
-from data_load import FacialKeypointsDataset
-from data_load import Rescale, RandomCrop, Normalize, ToTensor
 
 # define the data transform using transfroms.Compose([..])
 # Note the order is matter
@@ -44,8 +42,6 @@ train_loader = DataLoader(transformed_dataset,
                           batch_size=batch_size,
                           shuffle=True,
                           num_workers=4)
-
-import torch.optim as optim
 
 criterion = nn.SmoothL1Loss()
 optimizer = optim.Adam(net.parameters(), lr=0.001, betas=(0.9, 0.999), eps=1e-08)
