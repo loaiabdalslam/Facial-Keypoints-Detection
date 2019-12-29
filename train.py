@@ -36,7 +36,7 @@ for i in range(4):
 
 # Loadiing the data in batches
 # for windows users, change the num_workers to 0 or you will face some issues with your DataLoader failing
-batch_size = 10
+batch_size = 16
 
 train_loader = DataLoader(transformed_dataset,
                           batch_size=batch_size,
