@@ -12,13 +12,13 @@ import torch.optim as optim
 from models import *
 
 # instantiate the model
-net = AlexNet()
+net = NaimishNet()
 print(net)
 
 # define the data transform using transfroms.Compose([..])
 # Note the order is matter
 data_tranform = transforms.Compose([Rescale((250, 250)),
-                                    RandomCrop((227, 227)),
+                                    RandomCrop((224, 224)),
                                     Normalize(),
                                     ToTensor()])
 
