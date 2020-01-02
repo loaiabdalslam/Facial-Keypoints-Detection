@@ -9,7 +9,7 @@ from torch.nn import init
 class NaimishNet(nn.Module):
 
     def __init__(self):
-        super(Net, self).__init__()
+        super().__init__()
         # input image : (1, 224, 224) - graysclae squared image
         self.conv1 = nn.Conv2d(1, 32, kernel_size=(4, 4))
 
