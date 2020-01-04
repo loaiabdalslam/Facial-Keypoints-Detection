@@ -18,7 +18,7 @@ print(net)
 # define the data transform using transfroms.Compose([..])
 # Note the order is matter
 data_tranform = transforms.Compose([Rescale((250, 250)),
-                                    RandomCrop((224, 224)),
+                                    RandomCrop((227, 227)),
                                     Normalize(),
                                     ToTensor()])
 
@@ -36,7 +36,7 @@ for i in range(4):
 
 # Loadiing the data in batches
 # for windows users, change the num_workers to 0 or you will face some issues with your DataLoader failing
-batch_size = 16
+batch_size = 32
 
 train_loader = DataLoader(transformed_dataset,
                           batch_size=batch_size,
@@ -84,7 +84,7 @@ def train_net(n_epochs):
 
     print('Training Finished')
 
-n_epochs = 50
+n_epochs = 25
 train_net(n_epochs)
 
 # saving the model parameters
