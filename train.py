@@ -78,8 +78,8 @@ def train_net(n_epochs):
 
             # print the loss statistics
             running_loss += loss.item()
-            if batch_i % 16 == 15: # print every 10 batches
-                print('Epoch: {}, Batch: {}, Avg. Loss: {}'.format(epoch + 1, batch_i + 1, running_loss / 16))
+            if batch_i % 32 == 31: # print every 10 batches
+                print('Epoch: {}, Batch: {}, Avg. Loss: {}'.format(epoch + 1, batch_i + 1, running_loss / 32))
                 running_loss = 0.0
 
     print('Training Finished')
