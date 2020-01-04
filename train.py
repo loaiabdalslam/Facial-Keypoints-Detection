@@ -12,7 +12,7 @@ import torch.optim as optim
 from models import *
 
 # instantiate the model
-net = NaimishNet()
+net = AlexNet()
 print(net)
 
 # define the data transform using transfroms.Compose([..])
